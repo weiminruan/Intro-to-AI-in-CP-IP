@@ -1,0 +1,459 @@
+{
+  "name": "quiz2",
+  "intents": [
+    {
+      "intent": "atmospheric_tank",
+      "examples": [
+        {
+          "text": "•What pressures can an atmospheric tank operate at?"
+        },
+        {
+          "text": "•What pressures can an atmospheric vessel operate at?"
+        },
+        {
+          "text": "•What is an atmospheric tank?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "crude_oil",
+      "examples": [
+        {
+          "text": "•What is crude petroleum?"
+        },
+        {
+          "text": "•What is crude oil?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "data",
+      "examples": []
+    },
+    {
+      "intent": "DATA_NOT_WORKING",
+      "examples": [
+        {
+          "text": "how to expand the limit of this factory?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "barrel",
+      "examples": [
+        {
+          "text": "•What is a barrel?"
+        },
+        {
+          "text": "•How many gallons in a barrel?"
+        },
+        {
+          "text": "•How do I convert barrels to gallons?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "boilover",
+      "examples": [
+        {
+          "text": "•What are some issues with a burning tank?"
+        },
+        {
+          "text": "•What is boilover?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "portable_tank",
+      "examples": [
+        {
+          "text": "•What is a portable tank?"
+        },
+        {
+          "text": "•What is the largest tank I can transport chemicals with?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "flashpoint",
+      "examples": [
+        {
+          "text": "•What is a flashpoint?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "low_pressure_tank",
+      "examples": [
+        {
+          "text": "•How do I know if I have or am using a low-pressure tank?"
+        },
+        {
+          "text": "•What is a low-pressure tank?"
+        },
+        {
+          "text": "•What pressures are valid for a low-pressure tank?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "fire_extinguishers",
+      "examples": [
+        {
+          "text": "What if I don’t have fire extinguishers?"
+        },
+        {
+          "text": "•Can an alternative be used to a fire extinguisher?"
+        },
+        {
+          "text": "Can I use a standpipe or hose instead of a fire extinguisher?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "pressure_vessel",
+      "examples": [
+        {
+          "text": "•What is a pressure vessel?"
+        },
+        {
+          "text": "•What is a high-pressure tank called?"
+        },
+        {
+          "text": "•What is a tank called when it can handle high pressure?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "fire_extinguisher_distance",
+      "examples": [
+        {
+          "text": "•How close must a fire extinguisher be to a work area?"
+        },
+        {
+          "text": "•What is the maximum distance any worker can be from a fire extinguisher?"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [],
+  "language": "en",
+  "metadata": {
+    "api_version": {
+      "major_version": "v1",
+      "minor_version": "2018-09-20"
+    }
+  },
+  "description": "",
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_10_1556558596895"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "The employer shall distribute portable fire extinguishers for use by employees on Class A fires so that the travel distance for employees to any extinguisher is 75 feet (22.9 m) or less.\nThe employer shall distribute portable fire extinguishers for use by employees on Class B fires so that the travel distance from the Class B hazard area to any extinguisher is 50 feet (15.2 m) or less.\n"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#fire_extinguisher_distance",
+      "dialog_node": "node_9_1556558578631",
+      "previous_sibling": "node_8_1556558546821"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "It looks like the answer is not included in this database, please looking answer in here.<a href=https://discovery-us-south.watsonplatform.net/regions/us-south/services/crn%3Av1%3Abluemix%3Apublic%3Adiscovery%3Aus-south%3Aa%2F7544ed522a50429f8f561715f017f5af%3Aefcaea12-85cf-4157-a90e-c7c4c51a2b3f%3A%3A/environments/59279c4e-8d14-46a1-9dab-df8cc8709ee9/collections/ebe19c90-401b-4512-90f1-fe75ba2564bd/query/discovery>click here</a>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#DATA_NOT_WORKING",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_1_1556305521553",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Pressure vessel shall mean a storage tank or vessel which has been designed to operate at pressures above 15 psig."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#pressure_vessel",
+      "dialog_node": "node_6_1556558498745",
+      "previous_sibling": "node_5_1556558476125"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Barrel shall mean a volume of 42 U.S. gallons."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#barrel",
+      "dialog_node": "node_8_1556558546821",
+      "previous_sibling": "node_7_1556558522412"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Flashpoint means the minimum temperature at which a liquid gives off vapor within a test vessel in sufficient concentration to form an ignitable mixture with air near the surface of the liquid"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#flashpoint",
+      "dialog_node": "node_4_1556558447505",
+      "previous_sibling": "node_3_1556558419137"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Portable tank shall mean a closed container having a liquid capacity over 60 U.S. gallons and not intended for fixed installation."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#portable_tank",
+      "dialog_node": "node_7_1556558522412",
+      "previous_sibling": "node_6_1556558498745"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "The employer may use uniformly spaced standpipe systems or hose stations connected to a sprinkler system installed for emergency use by employees instead of Class A portable fire extinguishers, provided that such systems meet the respective requirements of §1910.158 or §1910.159, that they provide total coverage of the area to be protected, and that employees are trained at least annually in their use."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#fire_extinguishers",
+      "dialog_node": "node_10_1556558596895",
+      "previous_sibling": "node_9_1556558578631"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Low-pressure tank shall mean a storage tank which has been designed to operate at pressures above 0.5 psig but not more than 15 psig."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#low_pressure_tank",
+      "dialog_node": "node_5_1556558476125",
+      "previous_sibling": "node_4_1556558447505"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Boilover shall mean the expulsion of crude oil (or certain other liquids) from a burning tank. The light fractions of the crude oil burnoff producing a heat wave in the residue, which on reaching a water strata may result in the expulsion of a portion of the contents of the tank in the form of froth."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#boilover",
+      "dialog_node": "node_2_1556558375076",
+      "previous_sibling": "node_1_1556558307859"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Crude petroleum shall mean hydrocarbon mixtures that have a flash point below 150 °F. and which have not been processed in a refinery."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#crude_oil",
+      "dialog_node": "node_3_1556558419137",
+      "previous_sibling": "node_2_1556558375076"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Atmospheric tank shall mean a storage tank which has been designed to operate at pressures from atmospheric to 0.5 psig"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#atmospheric_tank",
+      "dialog_node": "node_1_1556558307859",
+      "previous_sibling": "node_1_1556305521553"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello. How can I help you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "workspace_id": "1637856d-1b6f-41fd-af43-7880c18f7b58",
+  "counterexamples": [
+    {
+      "text": "Are eyewash stations and showers needed if I have corrosive materials flowing through pipes in my plant?"
+    },
+    {
+      "text": "Can I use a low-pressure tank as an atmospheric tank?"
+    },
+    {
+      "text": "How do I determine the category of a flammable liquid?"
+    },
+    {
+      "text": "How do I know if a fire extinguisher is damaged?"
+    },
+    {
+      "text": "How do I know if a liquid is flammable?"
+    },
+    {
+      "text": "How often do I test fire extinguishers?"
+    },
+    {
+      "text": "What’s the largest above ground tank I can use?"
+    },
+    {
+      "text": "What type of fire extinguishers exist?"
+    },
+    {
+      "text": "When do I need to replace a fire extinguisher?"
+    },
+    {
+      "text": "When do I need to test a fire extinguisher?"
+    }
+  ],
+  "system_settings": {
+    "tooling": {
+      "store_generic_responses": true
+    }
+  },
+  "learning_opt_out": false,
+  "status": "Available"
+}
